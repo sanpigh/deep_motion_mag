@@ -1,7 +1,11 @@
 import math
 import numpy as np
 import tensorflow as tf
-import tensorflow.contrib.slim as slim
+# Modify this line
+# import tensorflow.contrib.slim as slim
+# with this one
+import tf_slim as slim
+
 from tensorflow.python.framework import ops
 
 from utils import *
