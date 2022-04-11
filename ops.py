@@ -5,13 +5,15 @@ import numpy as np
 #import tensorflow as tf
 # By this
 import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior()
 
-import tf.contrib.slim as slim
-from tf.python.framework import ops
+
+import tensorflow.compat.v1.contrib.slim as slim
+from tensorflow.compat.v1.python.framework import ops
 
 from utils import *
 
+
+tf.disable_v2_behavior()
 
 def batch_norm(x, name="batch_norm"):
     return tf.contrib.layers.batch_norm(x, decay=0.9,
