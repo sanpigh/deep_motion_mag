@@ -5,8 +5,17 @@ import sys
 import numpy as np
 from tqdm import tqdm
 import cv2
-import tensorflow as tf
 import json
+
+# Replace this
+#import tensorflow as tf
+# By this
+import tensorflow.compat.v1 as tf
+
+tf.disable_v2_behavior()
+
+
+
 
 FLAGS = None
 

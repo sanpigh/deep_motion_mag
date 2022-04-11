@@ -1,12 +1,14 @@
 import math
 import numpy as np
-import tensorflow as tf
-# Modify this line
-# import tensorflow.contrib.slim as slim
-# with this one
-import tf_slim as slim
 
-from tensorflow.python.framework import ops
+# Replace this
+#import tensorflow as tf
+# By this
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
+import tf.contrib.slim as slim
+from tf.python.framework import ops
 
 from utils import *
 

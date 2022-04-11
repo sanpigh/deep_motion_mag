@@ -1,4 +1,10 @@
-import tensorflow as tf
+# Replace this
+#import tensorflow as tf
+# By this
+import tensorflow.compat.v1 as tf
+
+tf.disable_v2_behavior()
+
 
 
 def read_and_decode(filename_queue, im_size=(512, 512, 1)):

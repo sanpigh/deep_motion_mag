@@ -1,5 +1,12 @@
 from __future__ import division
-import tensorflow as tf
+
+
+# Replace this
+#import tensorflow as tf
+# By this
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
 from ops import *
 from utils import *
 import numpy as np

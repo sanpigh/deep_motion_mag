@@ -1,7 +1,17 @@
 import argparse
 import os
 import shutil
-import tensorflow as tf
+
+
+# Replace this
+#import tensorflow as tf
+# By this
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
+
+
+
 import setproctitle
 from configobj import ConfigObj
 from validate import Validator
