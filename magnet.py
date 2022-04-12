@@ -1,7 +1,13 @@
 from __future__ import print_function
 
 import os
+
+
 import tensorflow as tf
+
+
+
+
 import numpy as np
 import cv2
 import time
@@ -665,4 +671,3 @@ class MagNet3Frames(object):
         finally:
             coord.request_stop()
             coord.join(threads)
-

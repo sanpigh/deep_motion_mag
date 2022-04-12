@@ -7,6 +7,10 @@ from configobj import ConfigObj
 from validate import Validator
 from magnet import MagNet3Frames
 
+import tensorflow.compat.v1 as tfv1
+
+
+
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--phase', dest='phase', default='train',
@@ -18,17 +22,7 @@ parser.add_argument('--config_spec', dest='config_spec',
                     help='path to config spec file')
 # for inference
 parser.add_argument('--vid_dir', dest='vid_dir', default=None,
-                    help='Video folder to run the network on.')
-parser.add_argument('--frame_ext', dest='frame_ext', default='png',
-                    help='Video frame file extension.')
-parser.add_argument('--out_dir', dest='out_dir', default=None,
-                    help='Output folder of the video run.')
-parser.add_argument('--amplification_factor', dest='amplification_factor',
-                    type=float, default=5,
-                    help='Magnification factor for inference.')
-parser.add_argument('--velocity_mag', dest='velocity_mag', action='store_true',
-                    help='Whether to do velocity magnification.')
-# For temporal operation.
+                 tf.ConfigProtoration.
 parser.add_argument('--fl', dest='fl', type=float,
                     help='Low cutoff Frequency.')
 parser.add_argument('--fh', dest='fh', type=float,
@@ -62,7 +56,7 @@ def main(args):
     exp_name = config['exp_name']
     setproctitle.setproctitle('{}_{}_{}' \
                               .format(args.phase, network_type, exp_name))
-    tfconfig = tf.ConfigProto(allow_soft_placement=True,
+    tfconfig = tfv1.ConfigProto(allow_soft_placement=True,
                               log_device_placement=False)
     tfconfig.gpu_options.allow_growth = True
 
