@@ -29,7 +29,7 @@ from preprocessor import preprocess_image, preproc_color
 from data_loader import read_and_decode_3frames
 
 # Change here if you use ffmpeg.
-DEFAULT_VIDEO_CONVERTER = 'avconv'
+DEFAULT_VIDEO_CONVERTER = 'ffmpeg'  #avconv
 
 
 class MagNet3Frames(object):
