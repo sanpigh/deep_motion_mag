@@ -12,6 +12,9 @@ import tensorflow.compat.v1 as tfv1
 
 
 
+
+
+
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--phase', dest='phase', default='train',
                     help='train, test, run, interactive')
@@ -22,7 +25,17 @@ parser.add_argument('--config_spec', dest='config_spec',
                     help='path to config spec file')
 # for inference
 parser.add_argument('--vid_dir', dest='vid_dir', default=None,
-                 tf.ConfigProtoration.
+                    help='Video folder to run the network on.')
+parser.add_argument('--frame_ext', dest='frame_ext', default='png',
+                    help='Video frame file extension.')
+parser.add_argument('--out_dir', dest='out_dir', default=None,
+                    help='Output folder of the video run.')
+parser.add_argument('--amplification_factor', dest='amplification_factor',
+                    type=float, default=5,
+                    help='Magnification factor for inference.')
+parser.add_argument('--velocity_mag', dest='velocity_mag', action='store_true',
+                    help='Whether to do velocity magnification.')
+# For temporal operation.
 parser.add_argument('--fl', dest='fl', type=float,
                     help='Low cutoff Frequency.')
 parser.add_argument('--fh', dest='fh', type=float,
