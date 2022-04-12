@@ -73,7 +73,7 @@ def main(args):
                               log_device_placement=False)
     tfconfig.gpu_options.allow_growth = True
 
-    with tf.Session(config=tfconfig) as sess:
+    with tfv1.Session(config=tfconfig) as sess:
         model = MagNet3Frames(sess, exp_name, config['architecture'])
         checkpoint = config['training']['checkpoint_dir']
         if args.phase == 'train':
